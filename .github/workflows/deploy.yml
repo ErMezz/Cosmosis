@@ -27,7 +27,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Get Content
-        run: git clone https://github.com/J-Arkell/Cosmosis.git content
+        run: git clone https://x-access-token:${{ secrets.COSMOSIS_PAT }}@github.com/J-Arkell/Cosmosis.git content
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
