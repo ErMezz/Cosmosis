@@ -3,12 +3,22 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 
+function slugify(title: string): string {
+  return title
+    .replace(/[^\w\s-]/g, "") // Remove punctuation
+    .trim()
+    .replace(/\s+/g, "-")     // Replace spaces with dashes
+}
+
 const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
-  const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
+  const title = fileData.frontmatter?.title
   const baseDir = pathToRoot(fileData.slug!)
+  imagePath = `./${fileData.slug}.png`
   return (
     <h2 class={classNames(displayClass, "page-title")}>
-      <a href={baseDir}>{title}</a>
+      <a href={baseDir}>
+        <img src={imagePath} alt={title} class="page-title-image" />
+      </a>
     </h2>
   )
 }
@@ -18,6 +28,14 @@ PageTitle.css = `
   font-size: 1.75rem;
   margin: 0;
   font-family: var(--titleFont);
+}
+
+.page-title-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.5rem; /* optional: rounded corners */
+  display: block;
 }
 `
 
