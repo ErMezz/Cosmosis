@@ -21,7 +21,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
           src={imagePath}
           alt={title}
           class="page-title-image"
-          onerror="this.src = '${baseDir}/static/icon.png';"
+          onerror="this.src = pathToRoot(fileData.slug!) + '/static/icon.png';"
         />
       </a>
     </h2>
