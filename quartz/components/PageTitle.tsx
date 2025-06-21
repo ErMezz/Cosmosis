@@ -43,7 +43,6 @@ PageTitle.css = `
   border-radius: 0.5rem; /* optional: rounded corners */
   display: block;
 }
-}
 `
 
 export default (() => PageTitle) satisfies QuartzComponentConstructor
