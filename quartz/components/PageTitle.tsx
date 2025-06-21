@@ -14,6 +14,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const title = fileData.frontmatter?.title
   const baseDir = pathToRoot(fileData.slug!)
   const imagePath = `./${slugify(title)}.png`
+  const errorres = 'this.src = ${baseDir} + \'/static/icon.png\';"
   return (
     <h2 class={classNames(displayClass, "page-title")}>
       <a href={baseDir}>
