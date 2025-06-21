@@ -14,7 +14,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const title = fileData.frontmatter?.title
   const baseDir = pathToRoot(fileData.slug!)
   const imagePath = `./${slugify(title)}.png`
-  const errorres = `this.src = \'${baseDir}/static/icon.png\';`
+  const errorres = `this.src = \'https://www.svgrepo.com/show/34112/solar-system.svg\';`
   return (
     <h2 class={classNames(displayClass, "page-title")}>
       <a href={baseDir}>
@@ -42,6 +42,14 @@ PageTitle.css = `
   object-fit: cover;
   border-radius: 0.5rem; /* optional: rounded corners */
   display: block;
+  filter: invert(0);
+  transition: filter 0.3s ease;
+
+@media (prefers-color-scheme: dark) {
+  .page-title-image {
+    filter: invert(1);
+  }
+}
 }
 `
 
