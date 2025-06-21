@@ -19,7 +19,8 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
       <a href={baseDir}>
         <img src={imagePath} alt={title} class="page-title-image" onError={(e) => {
             const target = e.currentTarget as HTMLImageElement
-            target.src = '{baseDir}static/icon.png'
+            console.log('Image load failed, switching to fallback image')
+            target.src = '${baseDir}/static/icon.png'
           }}
         />
       </a>
