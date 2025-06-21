@@ -19,7 +19,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
       <a href={baseDir}>
         <img src={imagePath} alt={title} class="page-title-image" onError={(e) => {
             const target = e.currentTarget as HTMLImageElement
-            target.src = '{baseDir}/static/og-image.png'
+            target.src = '{baseDir}static/icon.png'
           }}
         />
       </a>
