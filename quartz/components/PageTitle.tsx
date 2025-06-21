@@ -17,11 +17,11 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   return (
     <h2 class={classNames(displayClass, "page-title")}>
       <a href={baseDir}>
-        <img src={imagePath} alt={title} class="page-title-image" onError={(e) => {
-            const target = e.currentTarget as HTMLImageElement
-            console.log('Image load failed, switching to fallback image')
-            target.src = '${baseDir}/static/icon.png'
-          }}
+        <img 
+          src={imagePath}
+          alt={title}
+          class="page-title-image"
+          onerror="this.src = '${baseDir}/static/icon.png';"
         />
       </a>
     </h2>
