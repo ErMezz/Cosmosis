@@ -42,13 +42,7 @@ PageTitle.css = `
   object-fit: cover;
   border-radius: 0.5rem; /* optional: rounded corners */
   display: block;
-  filter: invert(0);
-  transition: filter 0.3s ease;
 }
-@media (prefers-color-scheme: dark) {
-  .page-title-image {
-    filter: invert(1);
-  }
 }
 `
 
