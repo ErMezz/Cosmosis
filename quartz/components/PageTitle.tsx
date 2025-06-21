@@ -13,11 +13,15 @@ function slugify(title: string): string {
 const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
   const baseDir = pathToRoot(fileData.slug!)
-  imagePath = `./${fileData.slug}.png`
+  imagePath = `./${title}.png`
   return (
     <h2 class={classNames(displayClass, "page-title")}>
       <a href={baseDir}>
-        <img src={imagePath} alt={title} class="page-title-image" />
+        <img src={imagePath} alt={title} class="page-title-image" onError={(e) => {
+            const target = e.currentTarget as HTMLImageElement
+            target.src = '{baseDir}/static/og-image.png" // Must also live alongside the HTML file
+          }}
+        />
       </a>
     </h2>
   )
