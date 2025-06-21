@@ -44,12 +44,11 @@ PageTitle.css = `
   display: block;
   filter: invert(0);
   transition: filter 0.3s ease;
-
+}
 @media (prefers-color-scheme: dark) {
   .page-title-image {
     filter: invert(1);
   }
-}
 }
 `
 
