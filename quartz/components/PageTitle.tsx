@@ -12,7 +12,7 @@ function slugify(title: string): string {
 
 const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponentProps) => {
   const title = fileData.frontmatter?.title
-  const baseDir = `${pathToRoot(fileData.slug!)}/Home'
+  const baseDir = `${pathToRoot(fileData.slug!)}/Home`
   const imagePath = `${pathToRoot(fileData.slug!)}/images/${slugify(title)}.png`
   const errorres = `this.src = \'https://www.svgrepo.com/show/34112/solar-system.svg\';`
   return (
