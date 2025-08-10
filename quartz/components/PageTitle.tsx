@@ -37,7 +37,7 @@ PageTitle.css = `
 }
 
 .page-title-image {
-  width: 100%;
+  width: 50%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 0.5rem; /* optional: rounded corners */
